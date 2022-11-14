@@ -1,11 +1,14 @@
 @startuml
 class Bank{
-
+- allTransactions()
+- clientTransactions()
++ transfer()
 }
 
-class Client{
+class Client extends BankAccount{
 - id : UUID
 - accounts : <List>
++checkIfCorporate()
 }
 
 enum BankAccountType{
@@ -23,5 +26,12 @@ abstract class BankAccount{
 + getAccountType() : BankAccountType
 }
 
+class Transaction{
+- transactionId;
+- from : Client
+- to : Client
+- amount : int
+- transactionList
+}
 
 @enduml
