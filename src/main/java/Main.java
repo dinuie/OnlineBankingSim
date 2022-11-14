@@ -5,5 +5,7 @@ public class Main {
         Client client2 = new Client(200,"EURO", BankAccountType.CORPORATE);
         Client client3 = new Client(300,"EURO", BankAccountType.CORPORATE);
         bank.transfer(100, client2, client3);
+        bank.transfer(50, client2, client3);
+        bank.printClientTransactions(client3);
     }
 }

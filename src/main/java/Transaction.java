@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.UUID;
 
 public class Transaction {
@@ -6,7 +5,6 @@ public class Transaction {
     private Client from;
     private Client to;
     private int amount;
-    private List<Transaction> transactionsList;
 
     public Transaction(Client from, Client to, int amount) {
         this.transactionId = UUID.randomUUID();
@@ -19,8 +17,8 @@ public class Transaction {
         return transactionId;
     }
 
-    public Client getFrom() {
-        return from;
+    public UUID getFromId() {
+        return from.getClientId();
     }
 
     public Client getTo() {
@@ -31,7 +29,5 @@ public class Transaction {
         return amount;
     }
 
-    public void addTransaction(Transaction transaction){
-        transactionsList.add(transaction);
-    }
+
 }
