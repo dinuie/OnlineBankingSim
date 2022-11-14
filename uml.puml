@@ -1,0 +1,27 @@
+@startuml
+class Bank{
+
+}
+
+class Client{
+- id : UUID
+- accounts : <List>
+}
+
+enum BankAccountType{
+CONSUMER,
+CORPORATE
+}
+
+abstract class BankAccount{
+- id : UUID
+- currentBalance : int
+- currencyInfo : String
++ getBalance() : int
++ getId() : UUID
++ getCurrency() : int
++ getAccountType() : BankAccountType
+}
+
+
+@enduml
