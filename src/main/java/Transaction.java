@@ -2,11 +2,11 @@ import java.util.UUID;
 
 public class Transaction {
     private UUID transactionId;
-    private Client from;
-    private Client to;
+    private BankAccount from;
+    private BankAccount to;
     private int amount;
 
-    public Transaction(Client from, Client to, int amount) {
+    public Transaction(BankAccount from, BankAccount to, int amount) {
         this.transactionId = UUID.randomUUID();
         this.from = from;
         this.to = to;
@@ -17,17 +17,16 @@ public class Transaction {
         return transactionId;
     }
 
-    public UUID getFromId() {
-        return from.getClientId();
+    public BankAccount getFrom() {
+        return from;
     }
 
-    public Client getTo() {
+    public BankAccount getTo() {
         return to;
     }
 
     public int getAmount() {
         return amount;
     }
-
 
 }

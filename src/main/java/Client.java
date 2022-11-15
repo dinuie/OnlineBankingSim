@@ -1,22 +1,10 @@
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Client extends BankAccount {
-    private UUID clientId;
+public class Client {
+    private List<BankAccount> bankAccounts = new ArrayList<>();
 
-    public Client(int currentBalance, String currency, BankAccountType bankAccountType) {
-        super(currentBalance, currency, bankAccountType);
-        clientId = UUID.randomUUID();
-    }
-
-
-    public boolean checkIfCorporate() {
-        if (getBankAccountType() == BankAccountType.CORPORATE) {
-            return true;
-        }
-        return false;
-    }
-
-    public UUID getClientId() {
-        return clientId;
+    public void addNewBankAccount(BankAccount bankAccount) {
+        bankAccounts.add(bankAccount);
     }
 }
